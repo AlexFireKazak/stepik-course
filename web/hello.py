@@ -7,8 +7,3 @@ def app(environ, start_response):
     ])
     return iter([data])
 
-environ = '/?a=1&a=2&b=3'
-in_text = environ[2:].split('&')
-print(in_text)
-out_text = '\n'.join(in_text).encode('utf-8')
-print(out_text)
