@@ -1,4 +1,3 @@
-cd stepik-course/
 mv web /home/box/
 sudo rm /etc/nginx/sites-enabled/default
 sudo rm /etc/nginx/sites-available/default
