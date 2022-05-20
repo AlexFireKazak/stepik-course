@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
-urlpatterns = [
+urlpatterns = (
     url(r'^qa/', include('qa.urls')),
     url(r'^login/', include('qa.urls')),
     url(r'^$', include('qa.urls')),
@@ -26,4 +26,4 @@ urlpatterns = [
     url(r'^popular/>*$', include('qa.urls')),
     url(r'^new/>*$', include('qa.urls')),
     url(r'^admin/', admin.site.urls),
-]
+)
