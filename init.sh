@@ -14,8 +14,8 @@ gunicorn -w 2 -c /home/box/web/etc/gunicorn_django_conf.py ask.wsgi:application 
 #put my setup
 sudo ln -sf /home/box/web/etc/mysql.cnf /etc/mysql/conf.d/mysql.cnf
 sudo /etc/init.d/mysql restart
-sudo mysql -u root -e "create database if not exists $DB_NAME;"
-sudo mysql -u root -e "create user 'box'@'localhost' identified by '1234';"
+sudo mysql -u root -e "create database $DB_NAME if not exists $DB_NAME;"
+sudo mysql -u root -e "create user 'box'@'localhost';"
 sudo mysql -u root -e "grant all privileges on $DB_NAME.* to '$DB_USER_NAME'@'localhost' with grant option;"
 
 /home/box/web/ask/manage.py makemigrations $DJ_APP_NAME
