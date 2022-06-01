@@ -11,12 +11,11 @@ sudo /etc/init.d/nginx restart
 gunicorn -w 2 -c /home/box/web/etc/hello.py hello:app &
 gunicorn -w 2 -c /home/box/web/etc/gunicorn_django_conf.py ask.wsgi:application &
 # SQL Parth
-sudo rm /etc/mysql/conf.d/mysql.cnf
-sudo /etc/init.d/mysql start
-sudo mysql -u root -e "create database if not exists $DB_NAME;"
-sudo mysql -u root -e "grant all privileges on $DB_NAME.* to '$DB_USER_NAME'@'localhost' with grant option;"
 #put my setup
 sudo ln -sf /home/box/web/etc/mysql.cnf /etc/mysql/conf.d/mysql.cnf
 sudo /etc/init.d/mysql restart
+sudo mysql -u root -e "create database if not exists $DB_NAME;"
+sudo mysql -u root -e "grant all privileges on $DB_NAME.* to '$DB_USER_NAME'@'localhost' with grant option;"
+
 /home/box/web/ask/manage.py makemigrations $DJ_APP_NAME
 /home/box/web/ask/manage.py migrate
