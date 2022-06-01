@@ -83,6 +83,11 @@ WSGI_APPLICATION = 'ask.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'web',
+        'USER': 'box',
+        'PASSWORD': '1234',
+        'HOST': 'localhost',
+        'PORT': '',
         'OPTIONS': {
             'read_default_file': '/etc/mysql/my.cnf',
             'init_command': 'SET innodb_strict_mode=1',

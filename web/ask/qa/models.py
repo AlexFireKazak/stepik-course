@@ -21,7 +21,7 @@ class Question(models.Model):
     objects = QuestionManager()
     # links
     author =models.ForeignKey(User, null=True, on_delete=models.CASCADE)
-    likes = models.ManyToManyField(User, related_name='likes')
+    likes = models.ManyToManyField(User, related_name='question_like_user')
     #methods
     def get_url(self):
         return reverse('question', kwargs={'id':self.id})
