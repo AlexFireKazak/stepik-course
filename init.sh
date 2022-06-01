@@ -19,3 +19,4 @@ sudo mysql -u root -e "grant all privileges on $DB_NAME.* to '$DB_USER_NAME'@'lo
 
 /home/box/web/ask/manage.py makemigrations $DJ_APP_NAME
 /home/box/web/ask/manage.py migrate
+/home/box/web/ask/manage.py syncdb
